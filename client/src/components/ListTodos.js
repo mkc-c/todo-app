@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import EditTodo from "./EditTodo";
 
 function ListTodos({ todos, setTodos }) {
   async function getTodos() {
-    const res = await fetch("http://localhost:8000/todos", {
+    const res = await fetch("/todos", {
       method: "GET",
       headers: { token: localStorage.token },
     });
@@ -25,7 +25,7 @@ function ListTodos({ todos, setTodos }) {
 
   async function deleteTodo(id) {
     try {
-      const res = await fetch(`http://localhost:8000/todos/${id}`, {
+      const res = await fetch(`/todos/${id}`, {
         method: "DELETE",
         headers: { token: localStorage.token },
       });

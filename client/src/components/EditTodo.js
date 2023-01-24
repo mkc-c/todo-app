@@ -7,7 +7,7 @@ function EditTodo({ todo, editTodo }) {
     try {
       const body = { description };
       console.log(id);
-      const res = await fetch(`http://localhost:8000/todos/${id}`, {
+      const res = await fetch(`/todos/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
